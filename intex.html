@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jitesh Real E State Hub | Luxury Real Estate Jaipur</title>
+<meta name="description" content="Jitesh Real E State Hub – Jaipur's most trusted luxury real estate company. Buy, sell and invest in premium properties with complete legal assurance.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --black: #0e0e0e;
+  --black2: #1C1C1C;
+  --gold: #C9A14A;
+  --gold2: #e8c675;
+  --gold3: #a07830;
+  --white: #F8F5F0;
+  --white2: #d5cfc7;
+  --glass: rgba(255,255,255,0.05);
+  --glass2: rgba(201,161,74,0.08);
+  --shadow: 0 8px 60px rgba(0,0,0,0.6);
+  --shadow-gold: 0 0 40px rgba(201,161,74,0.25);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black2);color:var(--white);font-family:'Poppins',sans-serif;overflow-x:hidden;}
+
+/* ===== LOADING SCREEN ===== */
+#loader{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.8s ease;}
+#loader.hide{opacity:0;pointer-events:none;}
+.loader-particles{position:absolute;inset:0;overflow:hidden;}
+.particle{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;animation:float-particle linear infinite;opacity:0;}
+@keyframes float-particle{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{transform:translateY(-10vh) scale(1.5);opacity:0;}}
+.loader-logo{text-align:center;z-index:1;}
+.loader-logo-icon{width:90px;height:90px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;animation:glow-pulse 2s ease-in-out infinite;position:relative;}
+.loader-logo-icon::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(201,161,74,0.3);animation:rotate 4s linear infinite;}
+@keyframes rotate{to{transform:rotate(360deg);}}
+@keyframes glow-pulse{0%,100%{box-shadow:0 0 20px rgba(201,161,74,0.4);}50%{box-shadow:0 0 60px rgba(201,161,74,0.8);}}
+.loader-logo-icon i{font-size:36px;color:var(--gold);}
+.loader-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--white);letter-spacing:2px;animation:fadeInUp 1s 0.5s both;}
+.loader-sub{font-size:0.75rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-top:8px;animation:fadeInUp 1s 0.8s both;}
+.loader-line{width:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto;animation:expand-line 1.5s 1.2s forwards;}
+@keyframes expand-line{to{width:200px;}}
+.loader-bar{width:200px;height:2px;background:rgba(255,255,255,0.1);border-radius:2px;margin:16px auto 0;overflow:hidden;}
+.loader-progress{height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold2));border-radius:2px;animation:loading-bar 2.5s ease forwards;}
+@keyframes loading-bar{to{width:100%;}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ===== TOP BAR ===== */
+.top-bar{background:#111;padding:8px 5%;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;border-bottom:1px solid rgba(201,161,74,0.2);}
+.top-bar a{color:var(--white2);text-decoration:none;transition:color 0.3s;}
+.top-bar a:hover{color:var(--gold);}
+.top-bar-contact{display:flex;gap:28px;}
+.top-bar-contact span{color:var(--white2);}
+.top-bar-contact i{color:var(--gold);margin-right:6px;}
+.top-bar-social{display:flex;gap:14px;}
+.top-bar-social a{color:var(--white2);font-size:0.8rem;}
+
+/* ===== NAVBAR ===== */
+nav{position:sticky;top:0;z-index:1000;background:rgba(14,14,14,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,161,74,0.15);padding:16px 5%;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s;}
+nav.scrolled{padding:12px 5%;background:rgba(10,10,10,0.97);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-icon{width:42px;height:42px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.nav-logo-icon i{color:var(--gold);font-size:18px;}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);line-height:1.1;}
+.nav-logo-text span{display:block;font-size:0.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-family:'Poppins',sans-serif;font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{color:var(--white2);text-decoration:none;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;font-weight:500;transition:color 0.3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{width:100%;}
+.btn-gold{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#000;padding:10px 24px;border:none;border-radius:2px;font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,161,74,0.4);}
+.nav-actions{display:flex;align-items:center;gap:14px;}
+.btn-outline-gold{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:9px 22px;border-radius:2px;font-size:0.82rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block;}
+.btn-outline-gold:hover{background:var(--gold);color:#000;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2px;background:var(--gold);transition:all 0.3s;}
+
+/* ===== HERO ===== */
+.hero{height:100vh;min-height:600px;position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero-slides{position:absolute;inset:0;}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center;}
+.hero-slide.active{opacity:1;}
+.hero-slide::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.4) 60%,rgba(0,0,0,0.6) 100%);}
+/* Cinematic luxury architecture — real Unsplash photos */
+.hs1{background:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1600&q=80') center/cover no-repeat;}
+.hs2{background:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80') center/cover no-repeat;}
+.hs3{background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80') center/cover no-repeat;}
+.hs4{background:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80') center/cover no-repeat;}
+.hs5{background:url('https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1600&q=80') center/cover no-repeat;}
+
+/* Circular image slider */
+.hero-circle-slider{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:min(45vw,520px);height:min(45vw,520px);z-index:2;}
+.circle-track{position:relative;width:100%;height:100%;animation:rotate-circle 25s linear infinite;}
+.circle-item{position:absolute;border-radius:50%;overflow:hidden;border:2px solid rgba(201,161,74,0.5);transition:all 0.3s;}
+.ci-main{width:55%;height:55%;top:50%;left:50%;transform:translate(-50%,-50%);border:3px solid var(--gold);z-index:3;}
+.ci-1{width:32%;height:32%;top:-5%;left:34%;}
+.ci-2{width:28%;height:28%;top:38%;right:-8%;}
+.ci-3{width:26%;height:26%;bottom:-4%;right:18%;}
+.ci-4{width:24%;height:24%;bottom:10%;left:0%;}
+.ci-5{width:22%;height:22%;top:22%;left:-6%;}
+.circle-item img,.circle-item .ci-bg{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.ci-bg{display:flex;align-items:center;justify-content:center;font-size:1.5rem;background:var(--glass2);}
+
+/* Hero content */
+.hero-content{position:relative;z-index:3;max-width:580px;padding:0 5%;animation:fadeInLeft 1.2s ease;}
+@keyframes fadeInLeft{from{opacity:0;transform:translateX(-40px);}to{opacity:1;transform:translateX(0);}}
+.hero-eyebrow{font-size:0.72rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold);}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.1;margin-bottom:20px;color:var(--white);}
+.hero-title em{font-style:italic;color:var(--gold);}
+.hero-desc{font-size:0.95rem;line-height:1.8;color:var(--white2);margin-bottom:36px;max-width:440px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3;color:var(--white2);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scroll-drop 2s ease-in-out infinite;}
+@keyframes scroll-drop{0%{opacity:0;transform:scaleY(0);transform-origin:top;}50%{opacity:1;}100%{opacity:0;transform:scaleY(1);transform-origin:bottom;}}
+.hero-dots{position:absolute;bottom:36px;right:5%;display:flex;gap:8px;z-index:3;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s;}
+.hero-dot.active{background:var(--gold);width:24px;border-radius:3px;}
+
+/* ===== ACHIEVEMENTS BAR ===== */
+.achievements{background:linear-gradient(135deg,#111 0%,rgba(201,161,74,0.08) 50%,#111 100%);border-top:1px solid rgba(201,161,74,0.2);border-bottom:1px solid rgba(201,161,74,0.2);padding:40px 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.achievement-item{text-align:center;position:relative;padding:10px;}
+.achievement-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:rgba(201,161,74,0.25);}
+.ach-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1;}
+.ach-label{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--white2);margin-top:6px;}
+
+/* ===== SECTIONS COMMON ===== */
+.section{padding:100px 5%;}
+.section-eyebrow{font-size:0.72rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+.section-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.15;color:var(--white);margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-desc{font-size:0.92rem;line-height:1.8;color:var(--white2);max-width:520px;}
+.divider-gold{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:20px 0;}
+
+/* ===== SERVICES SLIDER ===== */
+.services-section{padding:0;background:var(--black);}
+.services-header{padding:80px 5% 50px;text-align:center;}
+.services-header .section-eyebrow{justify-content:center;}
+.services-header .section-eyebrow::before{display:none;}
+.services-slider{position:relative;overflow:hidden;height:600px;}
+.services-track{display:flex;height:100%;transition:transform 0.8s cubic-bezier(0.77,0,0.175,1);}
+.service-slide{min-width:100%;height:100%;position:relative;display:flex;align-items:center;padding:0 5%;}
+.service-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.service-bg-gradient{position:absolute;inset:0;}
+.ss-buy .service-bg-gradient{background:linear-gradient(135deg,rgba(13,40,24,0.88),rgba(10,30,16,0.82));position:absolute;inset:0;z-index:1;}
+.ss-sell .service-bg-gradient{background:linear-gradient(135deg,rgba(45,26,6,0.88),rgba(30,16,4,0.82));position:absolute;inset:0;z-index:1;}
+.ss-rent .service-bg-gradient{background:linear-gradient(135deg,rgba(13,26,45,0.88),rgba(8,20,34,0.82));position:absolute;inset:0;z-index:1;}
+.ss-commercial .service-bg-gradient{background:linear-gradient(135deg,rgba(26,13,45,0.88),rgba(18,8,34,0.82));position:absolute;inset:0;z-index:1;}
+.ss-invest .service-bg-gradient{background:linear-gradient(135deg,rgba(26,21,10,0.88),rgba(18,16,10,0.82));position:absolute;inset:0;z-index:1;}
+.ss-villa .service-bg-gradient{background:linear-gradient(135deg,rgba(10,26,13,0.88),rgba(8,18,9,0.82));position:absolute;inset:0;z-index:1;}
+.ss-farm .service-bg-gradient{background:linear-gradient(135deg,rgba(13,26,10,0.88),rgba(8,20,8,0.82));position:absolute;inset:0;z-index:1;}
+.ss-legal .service-bg-gradient{background:linear-gradient(135deg,rgba(26,10,8,0.88),rgba(18,8,6,0.82));position:absolute;inset:0;z-index:1;}
+.ss-buy{background:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80') center/cover no-repeat;}
+.ss-sell{background:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1600&q=80') center/cover no-repeat;}
+.ss-rent{background:url('https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1600&q=80') center/cover no-repeat;}
+.ss-commercial{background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80') center/cover no-repeat;}
+.ss-invest{background:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80') center/cover no-repeat;}
+.ss-villa{background:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=80') center/cover no-repeat;}
+.ss-farm{background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80') center/cover no-repeat;}
+.ss-legal{background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat;}
+.service-deco{position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:min(25vw,220px);color:rgba(201,161,74,0.05);font-family:'Playfair Display',serif;font-weight:900;user-select:none;line-height:1;}
+.service-content{position:relative;z-index:2;max-width:600px;}
+.service-icon-wrap{width:80px;height:80px;border:1px solid rgba(201,161,74,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:24px;background:rgba(201,161,74,0.08);}
+.service-icon-wrap i{font-size:32px;color:var(--gold);}
+.service-num{font-size:0.72rem;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.service-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:16px;}
+.service-desc{font-size:0.92rem;line-height:1.8;color:var(--white2);margin-bottom:28px;max-width:460px;}
+.service-features{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:32px;}
+.sf-tag{background:rgba(201,161,74,0.1);border:1px solid rgba(201,161,74,0.25);padding:6px 14px;border-radius:20px;font-size:0.75rem;color:var(--gold);letter-spacing:1px;}
+.services-nav{display:flex;align-items:center;justify-content:center;gap:16px;padding:24px 5%;background:var(--black);}
+.sn-btn{width:48px;height:48px;border:1px solid rgba(201,161,74,0.35);border-radius:50%;background:transparent;color:var(--gold);font-size:1rem;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+.sn-btn:hover{background:var(--gold);color:#000;border-color:var(--gold);}
+.services-dots{display:flex;gap:8px;}
+.s-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:all 0.3s;}
+.s-dot.active{background:var(--gold);width:20px;border-radius:3px;}
+
+/* ===== WHY CHOOSE US ===== */
+.why-section{background:var(--black2);position:relative;overflow:hidden;}
+.why-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,161,74,0.06) 0%,transparent 70%);pointer-events:none;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.why-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.why-card{background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:8px;padding:24px 20px;transition:all 0.4s;position:relative;overflow:hidden;backdrop-filter:blur(10px);}
+.why-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,161,74,0.05),transparent);opacity:0;transition:opacity 0.4s;}
+.why-card:hover{transform:translateY(-6px);border-color:rgba(201,161,74,0.4);box-shadow:var(--shadow-gold);}
+.why-card:hover::before{opacity:1;}
+.wc-icon{width:50px;height:50px;border-radius:50%;background:rgba(201,161,74,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.wc-icon i{color:var(--gold);font-size:20px;}
+.wc-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);margin-bottom:6px;}
+.wc-desc{font-size:0.78rem;line-height:1.7;color:var(--white2);}
+
+/* ===== PROPERTY SEARCH ===== */
+.search-section{background:var(--black);padding:80px 5%;}
+.search-box{background:var(--glass);border:1px solid rgba(201,161,74,0.2);border-radius:12px;padding:40px;backdrop-filter:blur(20px);max-width:1100px;margin:0 auto;}
+.search-title{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--white);margin-bottom:8px;text-align:center;}
+.search-sub{font-size:0.85rem;color:var(--white2);text-align:center;margin-bottom:32px;letter-spacing:1px;}
+.search-filters{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px;}
+.filter-group{display:flex;flex-direction:column;gap:6px;}
+.filter-label{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.filter-select,.filter-input{background:rgba(255,255,255,0.05);border:1px solid rgba(201,161,74,0.2);color:var(--white);padding:11px 14px;border-radius:4px;font-size:0.85rem;font-family:'Poppins',sans-serif;outline:none;transition:border-color 0.3s;width:100%;}
+.filter-select:focus,.filter-input:focus{border-color:var(--gold);}
+.filter-select option{background:#1c1c1c;color:var(--white);}
+.search-btn-wrap{display:flex;justify-content:center;margin-top:8px;}
+#searchBtn{padding:14px 48px;font-size:0.85rem;letter-spacing:3px;}
+
+/* Property Results */
+#propertyResults{padding:40px 0 0;display:none;}
+.results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+.results-count{font-size:0.85rem;color:var(--white2);}
+.results-count strong{color:var(--gold);}
+.property-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.prop-card{background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:10px;overflow:hidden;transition:all 0.4s;cursor:pointer;}
+.prop-card:hover{transform:translateY(-6px);border-color:rgba(201,161,74,0.35);box-shadow:var(--shadow-gold);}
+.prop-img{height:180px;background:linear-gradient(135deg,#1a2030,#2a1a30);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.prop-img i{font-size:48px;color:rgba(201,161,74,0.2);}
+.prop-badge{position:absolute;top:12px;left:12px;background:var(--gold);color:#000;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
+.prop-body{padding:18px;}
+.prop-price{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin-bottom:4px;}
+.prop-title{font-size:0.9rem;color:var(--white);margin-bottom:8px;}
+.prop-meta{display:flex;gap:12px;font-size:0.75rem;color:var(--white2);}
+.prop-meta span i{color:var(--gold);margin-right:4px;}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials{background:var(--black2);padding:100px 5%;}
+.testi-slider{overflow:hidden;margin-top:50px;}
+.testi-track{display:flex;transition:transform 0.7s cubic-bezier(0.77,0,0.175,1);}
+.testi-card{min-width:calc(100%/3);padding:0 12px;}
+.testi-inner{background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:12px;padding:36px 28px;transition:all 0.4s;height:100%;}
+.testi-inner:hover{border-color:rgba(201,161,74,0.35);box-shadow:var(--shadow-gold);}
+.testi-stars{display:flex;gap:4px;margin-bottom:16px;}
+.testi-stars i{color:var(--gold);font-size:0.85rem;}
+.testi-text{font-size:0.88rem;line-height:1.8;color:var(--white2);font-style:italic;margin-bottom:24px;position:relative;padding-left:16px;}
+.testi-text::before{content:'"';position:absolute;left:0;top:-6px;font-size:2rem;color:var(--gold);font-family:'Playfair Display',serif;line-height:1;}
+.testi-author{display:flex;align-items:center;gap:14px;}
+.testi-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--gold3),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.2rem;color:#000;flex-shrink:0;}
+.testi-name{font-weight:600;font-size:0.9rem;color:var(--white);}
+.testi-location{font-size:0.75rem;color:var(--gold);}
+.testi-controls{display:flex;justify-content:center;gap:12px;margin-top:32px;}
+.tc-btn{width:44px;height:44px;border:1px solid rgba(201,161,74,0.3);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+.tc-btn:hover{background:var(--gold);color:#000;}
+
+/* ===== CONTACT ===== */
+.contact-section{background:var(--black);padding:100px 5%;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;}
+.contact-info-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;}
+.ci-icon{width:48px;height:48px;border:1px solid rgba(201,161,74,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ci-icon i{color:var(--gold);font-size:18px;}
+.ci-label{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.ci-value{font-size:0.92rem;color:var(--white2);}
+.ci-value a{color:var(--white2);text-decoration:none;transition:color 0.3s;}
+.ci-value a:hover{color:var(--gold);}
+.contact-form{background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:12px;padding:40px;backdrop-filter:blur(20px);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.form-label{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.form-input,.form-select,.form-textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(201,161,74,0.2);color:var(--white);padding:12px 16px;border-radius:4px;font-size:0.85rem;font-family:'Poppins',sans-serif;outline:none;transition:border-color 0.3s;width:100%;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold);}
+.form-select option{background:#1c1c1c;}
+.form-textarea{resize:vertical;min-height:110px;}
+.form-success{display:none;background:rgba(201,161,74,0.1);border:1px solid rgba(201,161,74,0.3);border-radius:6px;padding:16px;margin-top:16px;color:var(--gold);font-size:0.85rem;text-align:center;}
+
+/* ===== MAP SECTION ===== */
+.map-section{height:320px;background:linear-gradient(135deg,#0d1a2d 0%,#1a2e4a 50%,#0d1a2d 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.map-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.4);}
+.map-content{position:relative;z-index:1;text-align:center;}
+.map-pin{width:70px;height:70px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;animation:glow-pulse 3s ease-in-out infinite;}
+.map-pin i{font-size:28px;color:var(--gold);}
+.map-address{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:6px;}
+.map-city{font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
+/* Decorative grid */
+.map-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,161,74,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,161,74,0.06) 1px,transparent 1px);background-size:60px 60px;}
+
+/* ===== FOOTER ===== */
+footer{background:#080808;border-top:1px solid rgba(201,161,74,0.2);padding:70px 5% 30px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:50px;margin-bottom:50px;}
+.footer-brand .nav-logo{margin-bottom:16px;display:inline-flex;}
+.footer-tagline{font-size:0.85rem;line-height:1.8;color:var(--white2);margin-bottom:20px;}
+.footer-social{display:flex;gap:10px;}
+.footer-social a{width:36px;height:36px;border:1px solid rgba(201,161,74,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white2);font-size:0.8rem;transition:all 0.3s;text-decoration:none;}
+.footer-social a:hover{background:var(--gold);color:#000;border-color:var(--gold);}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);margin-bottom:20px;position:relative;padding-bottom:10px;}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:30px;height:1px;background:var(--gold);}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{color:var(--white2);text-decoration:none;font-size:0.83rem;transition:color 0.3s;display:flex;align-items:center;gap:6px;}
+.footer-links a::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:0;transition:opacity 0.3s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-links a:hover::before{opacity:1;}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:0.83rem;color:var(--white2);}
+.footer-contact-item i{color:var(--gold);margin-top:2px;font-size:0.8rem;flex-shrink:0;}
+.footer-contact-item a{color:var(--white2);text-decoration:none;transition:color 0.3s;}
+.footer-contact-item a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:var(--white2);}
+.footer-bottom .gold{color:var(--gold);}
+
+/* ===== FLOATING BUTTONS ===== */
+.float-whatsapp{position:fixed;bottom:100px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(37,211,102,0.4);z-index:500;text-decoration:none;transition:all 0.3s;}
+.float-whatsapp:hover{transform:scale(1.1);}
+.float-whatsapp i{color:#fff;font-size:26px;}
+.float-call{position:fixed;bottom:32px;right:24px;width:56px;height:56px;background:linear-gradient(135deg,var(--gold3),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(201,161,74,0.4);z-index:500;text-decoration:none;transition:all 0.3s;animation:call-pulse 3s ease-in-out infinite;}
+@keyframes call-pulse{0%,100%{box-shadow:0 8px 30px rgba(201,161,74,0.4);}50%{box-shadow:0 8px 50px rgba(201,161,74,0.7);}}
+.float-call:hover{transform:scale(1.1);}
+.float-call i{color:#000;font-size:24px;}
+.back-top{position:fixed;bottom:32px;left:24px;width:48px;height:48px;background:rgba(201,161,74,0.15);border:1px solid rgba(201,161,74,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:500;opacity:0;transition:all 0.3s;color:var(--gold);}
+.back-top.visible{opacity:1;}
+.back-top:hover{background:var(--gold);color:#000;}
+
+/* ===== AUTH MODALS ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all 0.3s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:#141414;border:1px solid rgba(201,161,74,0.2);border-radius:16px;padding:40px;width:min(460px,90vw);position:relative;transform:translateY(20px);transition:transform 0.3s;}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--white2);font-size:1.2rem;cursor:pointer;transition:color 0.3s;}
+.modal-close:hover{color:var(--gold);}
+.modal-logo{text-align:center;margin-bottom:24px;}
+.modal-logo i{font-size:2rem;color:var(--gold);}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white);text-align:center;margin-bottom:4px;}
+.modal-sub{font-size:0.8rem;color:var(--white2);text-align:center;margin-bottom:28px;letter-spacing:1px;}
+.modal-switch{text-align:center;margin-top:16px;font-size:0.82rem;color:var(--white2);}
+.modal-switch a{color:var(--gold);cursor:pointer;text-decoration:none;}
+.modal-forgot{text-align:right;font-size:0.78rem;color:var(--gold);cursor:pointer;margin-top:-8px;margin-bottom:10px;}
+.user-menu{display:none;background:#141414;border:1px solid rgba(201,161,74,0.2);border-radius:8px;position:absolute;top:120%;right:0;min-width:180px;padding:8px 0;z-index:100;}
+.user-menu.open{display:block;}
+.user-menu a{display:block;padding:10px 20px;font-size:0.82rem;color:var(--white2);text-decoration:none;transition:background 0.2s,color 0.2s;}
+.user-menu a:hover{background:rgba(201,161,74,0.1);color:var(--gold);}
+.user-menu hr{border:none;border-top:1px solid rgba(255,255,255,0.07);margin:4px 0;}
+.nav-user-wrap{position:relative;}
+.nav-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold3),var(--gold));display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:700;font-size:0.9rem;color:#000;}
+
+/* ===== DASHBOARD / UPLOAD ===== */
+.page-section{display:none;padding:60px 5%;min-height:80vh;}
+.page-section.visible{display:block;}
+.dashboard-header{margin-bottom:40px;}
+.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;}
+.dash-stat{background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:8px;padding:20px;text-align:center;}
+.ds-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);}
+.ds-label{font-size:0.75rem;color:var(--white2);letter-spacing:1px;margin-top:4px;}
+.upload-form{background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:12px;padding:40px;max-width:800px;}
+.upload-form .form-row{margin-bottom:0;}
+.upload-image-zone{border:2px dashed rgba(201,161,74,0.3);border-radius:8px;padding:40px;text-align:center;cursor:pointer;transition:all 0.3s;margin-bottom:14px;}
+.upload-image-zone:hover{border-color:var(--gold);background:rgba(201,161,74,0.05);}
+.upload-image-zone i{font-size:2.5rem;color:var(--gold);margin-bottom:10px;}
+.upload-image-zone p{font-size:0.85rem;color:var(--white2);}
+.pending-badge{background:rgba(255,165,0,0.15);color:orange;border:1px solid rgba(255,165,0,0.3);padding:3px 10px;border-radius:20px;font-size:0.72rem;letter-spacing:1px;}
+.approved-badge{background:rgba(0,200,100,0.12);color:#00c864;border:1px solid rgba(0,200,100,0.3);padding:3px 10px;border-radius:20px;font-size:0.72px;}
+.approved-badge{background:rgba(0,200,100,0.12);color:#00c864;border:1px solid rgba(0,200,100,0.3);padding:3px 10px;border-radius:20px;font-size:0.72rem;}
+
+/* ===== ADMIN PANEL ===== */
+.admin-section{background:var(--black2);}
+.admin-tabs{display:flex;gap:4px;background:rgba(255,255,255,0.04);border-radius:8px;padding:4px;margin-bottom:28px;overflow-x:auto;}
+.admin-tab{padding:10px 20px;border-radius:6px;cursor:pointer;font-size:0.82rem;color:var(--white2);transition:all 0.3s;white-space:nowrap;border:none;background:transparent;}
+.admin-tab.active{background:var(--gold);color:#000;font-weight:600;}
+.admin-table{width:100%;border-collapse:collapse;font-size:0.82rem;}
+.admin-table th{padding:12px 16px;text-align:left;border-bottom:1px solid rgba(201,161,74,0.2);color:var(--gold);letter-spacing:1px;text-transform:uppercase;font-size:0.72rem;}
+.admin-table td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.05);color:var(--white2);vertical-align:middle;}
+.admin-table tr:hover td{background:rgba(255,255,255,0.02);}
+.btn-approve{background:rgba(0,200,100,0.15);color:#00c864;border:1px solid rgba(0,200,100,0.3);padding:5px 12px;border-radius:4px;cursor:pointer;font-size:0.75rem;transition:all 0.3s;font-family:'Poppins',sans-serif;}
+.btn-approve:hover{background:rgba(0,200,100,0.3);}
+.btn-reject{background:rgba(220,50,50,0.12);color:#ff5555;border:1px solid rgba(220,50,50,0.3);padding:5px 12px;border-radius:4px;cursor:pointer;font-size:0.75rem;transition:all 0.3s;font-family:'Poppins',sans-serif;}
+.btn-reject:hover{background:rgba(220,50,50,0.3);}
+.btn-del{background:transparent;color:var(--white2);border:1px solid rgba(255,255,255,0.15);padding:5px 10px;border-radius:4px;cursor:pointer;font-size:0.75rem;transition:all 0.3s;font-family:'Poppins',sans-serif;}
+.btn-del:hover{color:#ff5555;border-color:#ff5555;}
+
+/* ===== ABOUT SECTION ===== */
+.about-section{background:var(--black);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-visual{position:relative;}
+.about-img-main{width:100%;height:380px;background:linear-gradient(145deg,#1a2030,#2a1530);border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,161,74,0.15);overflow:hidden;position:relative;}
+.about-img-main::after{content:'JREH';position:absolute;font-family:'Playfair Display',serif;font-size:5rem;color:rgba(201,161,74,0.07);font-weight:900;}
+.about-img-main i{font-size:4rem;color:rgba(201,161,74,0.2);z-index:1;}
+.about-badge{position:absolute;bottom:-20px;right:-20px;background:linear-gradient(135deg,var(--gold3),var(--gold));padding:20px 24px;border-radius:10px;text-align:center;}
+.about-badge-num{font-family:'Playfair Display',serif;font-size:2rem;color:#000;font-weight:700;}
+.about-badge-label{font-size:0.68rem;color:#000;letter-spacing:2px;text-transform:uppercase;}
+
+/* ===== LUXURY EXPERIENCE ===== */
+.luxury-section{background:linear-gradient(135deg,#0a0a0a 0%,#1a1208 40%,#0a0a0a 100%);position:relative;overflow:hidden;}
+.luxury-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.luxury-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.luxury-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.luxury-card{background:rgba(201,161,74,0.04);border:1px solid rgba(201,161,74,0.12);border-radius:10px;padding:36px 28px;text-align:center;transition:all 0.5s;position:relative;overflow:hidden;}
+.luxury-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at center,rgba(201,161,74,0.08) 0%,transparent 60%);opacity:0;transition:opacity 0.5s;}
+.luxury-card:hover{transform:translateY(-8px);border-color:rgba(201,161,74,0.4);box-shadow:0 20px 60px rgba(0,0,0,0.4),var(--shadow-gold);}
+.luxury-card:hover::before{opacity:1;}
+.lc-num{font-family:'Playfair Display',serif;font-size:3.5rem;color:rgba(201,161,74,0.15);font-weight:900;line-height:1;margin-bottom:-10px;}
+.lc-icon{font-size:2.2rem;color:var(--gold);margin-bottom:16px;}
+.lc-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);margin-bottom:10px;}
+.lc-desc{font-size:0.82rem;line-height:1.8;color:var(--white2);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .why-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .about-grid{grid-template-columns:1fr;gap:40px;}
+  .about-badge{right:10px;}
+}
+@media(max-width:768px){
+  .top-bar{display:none;}
+  .nav-links{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;font-size:1.1rem;z-index:999;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+  .hero-circle-slider{display:none;}
+  .hero-content{max-width:100%;text-align:center;}
+  .hero-eyebrow{justify-content:center;}
+  .hero-btns{justify-content:center;}
+  .achievements{grid-template-columns:repeat(2,1fr);}
+  .achievement-item:nth-child(2)::after{display:none;}
+  .search-filters{grid-template-columns:1fr 1fr;}
+  .property-grid{grid-template-columns:1fr;}
+  .testi-card{min-width:100%;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center;}
+  .why-features{grid-template-columns:1fr;}
+  .luxury-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .dash-stats{grid-template-columns:1fr 1fr;}
+  .hero-scroll{display:none;}
+}
+@media(max-width:480px){
+  .achievements{grid-template-columns:1fr 1fr;}
+  .search-filters{grid-template-columns:1fr;}
+}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.delay-1{transition-delay:0.1s;}
+.delay-2{transition-delay:0.2s;}
+.delay-3{transition-delay:0.3s;}
+.delay-4{transition-delay:0.4s;}
+.delay-5{transition-delay:0.5s;}
+
+/* Notification */
+.notif{position:fixed;top:90px;right:24px;background:#141414;border:1px solid rgba(201,161,74,0.3);border-radius:8px;padding:14px 20px;font-size:0.85rem;color:var(--white);z-index:3000;transform:translateX(120%);transition:transform 0.4s;max-width:300px;}
+.notif.show{transform:translateX(0);}
+.notif i{color:var(--gold);margin-right:8px;}
+</style>
+</head>
+<body>
+
+<!-- ===== LOADER ===== -->
+<div id="loader">
+  <div class="loader-particles" id="particles"></div>
+  <div class="loader-logo">
+    <div class="loader-logo-icon"><i class="fas fa-gem"></i></div>
+    <div class="loader-title">Jitesh Real E State Hub</div>
+    <div class="loader-sub">Luxury · Trust · Excellence</div>
+    <div class="loader-line"></div>
+    <div class="loader-bar"><div class="loader-progress" style="width:0"></div></div>
+  </div>
+</div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <div class="top-bar-contact">
+    <span><i class="fas fa-phone"></i><a href="tel:+919667300381">+91 96673 00381</a></span>
+    <span><i class="fas fa-envelope"></i><a href="mailto:sahujits999@gmail.com">sahujits999@gmail.com</a></span>
+    <span><i class="fas fa-map-marker-alt"></i>Jaipur, Rajasthan</span>
+  </div>
+  <div class="top-bar-social">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/919667300381" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <a class="nav-logo" href="#home">
+    <div class="nav-logo-icon"><i class="fas fa-gem"></i></div>
+    <div class="nav-logo-text">Jitesh Real E State Hub<span>Luxury Real Estate</span></div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" onclick="closeMobileNav()">Home</a></li>
+    <li><a href="#about" onclick="closeMobileNav()">About</a></li>
+    <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
+    <li><a href="#search" onclick="closeMobileNav()">Properties</a></li>
+    <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="nav-user-wrap" id="navUserWrap">
+      <a href="#" class="btn-outline-gold" id="loginNavBtn" onclick="openModal('loginModal');return false;">Login</a>
+      <a href="#" class="btn-gold" id="registerNavBtn" onclick="openModal('registerModal');return false;">Register</a>
+      <div class="nav-avatar" id="navAvatar" style="display:none" onclick="toggleUserMenu()"></div>
+      <div class="user-menu" id="userMenu">
+        <a href="#" onclick="showPage('dashboard');closeUserMenu();return false;"><i class="fas fa-th-large" style="margin-right:8px;color:var(--gold)"></i>Dashboard</a>
+        <a href="#" onclick="showPage('upload');closeUserMenu();return false;"><i class="fas fa-plus-circle" style="margin-right:8px;color:var(--gold)"></i>Upload Property</a>
+        <hr>
+        <a href="#" onclick="logout();return false;" style="color:#ff5555;"><i class="fas fa-sign-out-alt" style="margin-right:8px"></i>Logout</a>
+      </div>
+    </div>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main id="mainContent">
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide hs1 active"></div>
+    <div class="hero-slide hs2"></div>
+    <div class="hero-slide hs3"></div>
+    <div class="hero-slide hs4"></div>
+    <div class="hero-slide hs5"></div>
+  </div>
+  <!-- Circular slider with real property photos -->
+  <div class="hero-circle-slider">
+    <div class="circle-track" id="circleTrack">
+      <div class="circle-item ci-main">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80" alt="Luxury Villa" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+      <div class="circle-item ci-1">
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=300&q=80" alt="Luxury Mansion" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+      <div class="circle-item ci-2">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=300&q=80" alt="Modern Villa" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+      <div class="circle-item ci-3">
+        <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=300&q=80" alt="Premium Penthouse" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+      <div class="circle-item ci-4">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=300&q=80" alt="Luxury Interior" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+      <div class="circle-item ci-5">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=300&q=80" alt="Commercial Tower" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Jaipur's Premier Real Estate</div>
+    <h1 class="hero-title">Find Your <em>Dream Property</em> with Trust & Transparency</h1>
+    <p class="hero-desc">Buy, Sell & Invest in Premium Real Estate with Complete Legal Assurance. Your vision, our expertise—delivered with integrity.</p>
+    <div class="hero-btns">
+      <a href="#search" class="btn-gold">Search Property</a>
+      <a href="#contact" class="btn-outline-gold" style="color:var(--white);border-color:rgba(255,255,255,0.4);">Sell Your Property</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Discover</span><div class="scroll-line"></div></div>
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<div class="achievements">
+  <div class="achievement-item reveal">
+    <div class="ach-num" data-target="3">0</div>
+    <div class="ach-label">Years of Trusted Experience</div>
+  </div>
+  <div class="achievement-item reveal delay-1">
+    <div class="ach-num" data-target="43">0</div>
+    <div class="ach-label">Properties Successfully Sold</div>
+  </div>
+  <div class="achievement-item reveal delay-2">
+    <div class="ach-num" data-target="100">0</div>
+    <div class="ach-label">% Legal Verification</div>
+  </div>
+  <div class="achievement-item reveal delay-3">
+    <div class="ach-num" data-target="500">0</div>
+    <div class="ach-label">Happy Clients Served</div>
+  </div>
+</div>
+
+<!-- LUXURY EXPERIENCE -->
+<section class="section luxury-section" id="luxury">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="section-eyebrow reveal" style="justify-content:center;"><span>The Luxury Experience</span></div>
+    <h2 class="section-title reveal" style="text-align:center;">Why Elite Clients <em>Choose Us</em></h2>
+    <p class="section-desc reveal" style="margin:0 auto;text-align:center;">We don't just sell properties—we craft legacies. Our commitment to excellence has made us Jaipur's most trusted luxury real estate partner.</p>
+  </div>
+  <div class="luxury-grid">
+    <div class="luxury-card reveal">
+      <div class="lc-num">01</div>
+      <div class="lc-icon"><i class="fas fa-shield-alt"></i></div>
+      <div class="lc-title">100% Legal Verification</div>
+      <div class="lc-desc">Every property undergoes rigorous legal due diligence before listing. Complete documentation, verified titles, and zero legal surprises.</div>
+    </div>
+    <div class="luxury-card reveal delay-1">
+      <div class="lc-num">02</div>
+      <div class="lc-icon"><i class="fas fa-handshake"></i></div>
+      <div class="lc-title">Transparent Zero Hidden Charges</div>
+      <div class="lc-desc">What you see is what you pay. Full transparency from the first consultation through the final signature—no hidden fees, ever.</div>
+    </div>
+    <div class="luxury-card reveal delay-2">
+      <div class="lc-num">03</div>
+      <div class="lc-icon"><i class="fas fa-crown"></i></div>
+      <div class="lc-title">Premium VIP Client Support</div>
+      <div class="lc-desc">Dedicated relationship managers, priority scheduling, and 24/7 concierge-level support tailored to discerning investors and buyers.</div>
+    </div>
+    <div class="luxury-card reveal delay-3">
+      <div class="lc-num">04</div>
+      <div class="lc-icon"><i class="fas fa-bolt"></i></div>
+      <div class="lc-title">Fast & Effortless Deals</div>
+      <div class="lc-desc">Our streamlined process handles all paperwork and coordination, delivering swift closures without compromising quality or accuracy.</div>
+    </div>
+    <div class="luxury-card reveal delay-4">
+      <div class="lc-num">05</div>
+      <div class="lc-icon"><i class="fas fa-map-marked-alt"></i></div>
+      <div class="lc-title">Deep Jaipur Market Expertise</div>
+      <div class="lc-desc">Three years of on-ground experience across Jaipur's premium localities gives us unmatched insight into pricing trends and hotspots.</div>
+    </div>
+    <div class="luxury-card reveal delay-5">
+      <div class="lc-num">06</div>
+      <div class="lc-icon"><i class="fas fa-chart-line"></i></div>
+      <div class="lc-title">Maximum Investment Returns</div>
+      <div class="lc-desc">Our investment advisory team identifies high-growth corridors in Rajasthan, ensuring your capital works harder for your future.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SLIDER -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <div class="section-eyebrow reveal" style="justify-content:center;"><span>Premium Services</span></div>
+    <h2 class="section-title reveal" style="text-align:center;">An Exclusive Suite of <em>Real Estate</em> Solutions</h2>
+  </div>
+  <div class="services-slider" id="servicesSlider">
+    <div class="services-track" id="servicesTrack">
+      <!-- Buy -->
+      <div class="service-slide ss-buy">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Buy</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-home"></i></div>
+          <div class="service-num">01 / 08</div>
+          <div class="service-title">Buy Property</div>
+          <div class="service-desc">Discover your perfect home or investment property from our carefully curated portfolio of premium real estate across Jaipur's finest localities.</div>
+          <div class="service-features">
+            <span class="sf-tag">Verified Listings</span>
+            <span class="sf-tag">Site Visits</span>
+            <span class="sf-tag">Price Negotiation</span>
+          </div>
+          <a href="#search" class="btn-gold">Explore Properties</a>
+        </div>
+      </div>
+      <!-- Sell -->
+      <div class="service-slide ss-sell">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Sell</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-sign-hanging"></i></div>
+          <div class="service-num">02 / 08</div>
+          <div class="service-title">Sell Property</div>
+          <div class="service-desc">Maximize your property's value with our premium listing services, professional marketing, and access to a network of qualified buyers.</div>
+          <div class="service-features">
+            <span class="sf-tag">Free Valuation</span>
+            <span class="sf-tag">Premium Listing</span>
+            <span class="sf-tag">Fast Closure</span>
+          </div>
+          <a href="#contact" class="btn-gold">List Your Property</a>
+        </div>
+      </div>
+      <!-- Rent -->
+      <div class="service-slide ss-rent">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Rent</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-key"></i></div>
+          <div class="service-num">03 / 08</div>
+          <div class="service-title">Rent Property</div>
+          <div class="service-desc">Find the perfect rental property or connect with verified tenants. We handle agreements, background checks, and ongoing management.</div>
+          <div class="service-features">
+            <span class="sf-tag">Tenant Verification</span>
+            <span class="sf-tag">Rental Agreements</span>
+            <span class="sf-tag">Property Management</span>
+          </div>
+          <a href="#contact" class="btn-gold">Find Rentals</a>
+        </div>
+      </div>
+      <!-- Commercial -->
+      <div class="service-slide ss-commercial">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Commercial</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-city"></i></div>
+          <div class="service-num">04 / 08</div>
+          <div class="service-title">Commercial Property</div>
+          <div class="service-desc">Office spaces, retail outlets, warehouses, and showrooms—premium commercial real estate solutions for growing businesses and enterprises.</div>
+          <div class="service-features">
+            <span class="sf-tag">Office Spaces</span>
+            <span class="sf-tag">Retail Outlets</span>
+            <span class="sf-tag">Warehouses</span>
+          </div>
+          <a href="#contact" class="btn-gold">Enquire Now</a>
+        </div>
+      </div>
+      <!-- Invest -->
+      <div class="service-slide ss-invest">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Invest</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-chart-line"></i></div>
+          <div class="service-num">05 / 08</div>
+          <div class="service-title">Property Investment</div>
+          <div class="service-desc">Strategic real estate investment advisory identifying high-return opportunities in Rajasthan's fastest-growing corridors and planned developments.</div>
+          <div class="service-features">
+            <span class="sf-tag">Market Analysis</span>
+            <span class="sf-tag">ROI Projections</span>
+            <span class="sf-tag">Portfolio Building</span>
+          </div>
+          <a href="#contact" class="btn-gold">Start Investing</a>
+        </div>
+      </div>
+      <!-- Luxury Villas -->
+      <div class="service-slide ss-villa">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Villas</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-swimming-pool"></i></div>
+          <div class="service-num">06 / 08</div>
+          <div class="service-title">Luxury Villas</div>
+          <div class="service-desc">Exclusive private villas with world-class amenities, sprawling gardens, and architectural brilliance in Jaipur's most prestigious addresses.</div>
+          <div class="service-features">
+            <span class="sf-tag">Private Pools</span>
+            <span class="sf-tag">Gated Community</span>
+            <span class="sf-tag">Smart Homes</span>
+          </div>
+          <a href="#contact" class="btn-gold">View Villas</a>
+        </div>
+      </div>
+      <!-- Farm Houses -->
+      <div class="service-slide ss-farm">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Farmhouse</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-tree"></i></div>
+          <div class="service-num">07 / 08</div>
+          <div class="service-title">Farm Houses</div>
+          <div class="service-desc">Serene farmhouse estates offering privacy, nature, and luxury. Ideal for weekend retreats, organic living, or premium event venues.</div>
+          <div class="service-features">
+            <span class="sf-tag">Large Acreage</span>
+            <span class="sf-tag">Private Estates</span>
+            <span class="sf-tag">Event Ready</span>
+          </div>
+          <a href="#contact" class="btn-gold">Explore Estates</a>
+        </div>
+      </div>
+      <!-- Legal -->
+      <div class="service-slide ss-legal">
+        <div class="service-bg"><div class="service-bg-gradient"></div></div>
+        <div class="service-deco">Legal</div>
+        <div class="service-content">
+          <div class="service-icon-wrap"><i class="fas fa-gavel"></i></div>
+          <div class="service-num">08 / 08</div>
+          <div class="service-title">Legal Documentation</div>
+          <div class="service-desc">End-to-end legal support including title verification, sale deed preparation, registration, stamp duty, home loan assistance, and more.</div>
+          <div class="service-features">
+            <span class="sf-tag">Title Search</span>
+            <span class="sf-tag">Registration</span>
+            <span class="sf-tag">Home Loan Support</span>
+          </div>
+          <a href="#contact" class="btn-gold">Get Legal Help</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="services-nav">
+    <button class="sn-btn" onclick="prevService()"><i class="fas fa-chevron-left"></i></button>
+    <div class="services-dots" id="servicesDots"></div>
+    <button class="sn-btn" onclick="nextService()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-img-main"><i class="fas fa-building"></i></div>
+      <div class="about-badge">
+        <div class="about-badge-num">3+</div>
+        <div class="about-badge-label">Years of Excellence</div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="section-eyebrow">Our Story</div>
+      <h2 class="section-title">Jaipur's Most <em>Trusted</em> Real Estate Partner</h2>
+      <div class="divider-gold"></div>
+      <p class="section-desc" style="margin-bottom:20px;">Founded with a mission to bring transparency and trust to real estate, Jitesh Real E State Hub has grown from a boutique agency into Jaipur's go-to destination for premium property solutions.</p>
+      <p class="section-desc" style="margin-bottom:32px;">Our founder Jitesh Sahu's decade-long understanding of Rajasthan's real estate market, combined with a relentless commitment to client satisfaction, has resulted in 43+ successful property transactions and hundreds of happy families.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.83rem;color:var(--white2);"><i class="fas fa-check-circle" style="color:var(--gold)"></i>RERA Compliant Transactions</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.83rem;color:var(--white2);"><i class="fas fa-check-circle" style="color:var(--gold)"></i>Legal Title Verification</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.83rem;color:var(--white2);"><i class="fas fa-check-circle" style="color:var(--gold)"></i>Transparent Pricing</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.83rem;color:var(--white2);"><i class="fas fa-check-circle" style="color:var(--gold)"></i>Home Loan Assistance</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.83rem;color:var(--white2);"><i class="fas fa-check-circle" style="color:var(--gold)"></i>Premium Client Support</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.83rem;color:var(--white2);"><i class="fas fa-check-circle" style="color:var(--gold)"></i>Zero Hidden Charges</div>
+      </div>
+      <a href="#contact" class="btn-gold">Schedule a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section why-section">
+  <div class="why-grid">
+    <div>
+      <div class="section-eyebrow reveal">Why Choose Us</div>
+      <h2 class="section-title reveal">The <em>Difference</em> That Defines Us</h2>
+      <div class="divider-gold"></div>
+      <p class="section-desc reveal" style="margin-bottom:32px;">When it comes to your most significant financial decision, you deserve a partner who puts your interests first—every time, without exception.</p>
+      <a href="#contact" class="btn-gold reveal">Talk to Our Expert</a>
+    </div>
+    <div class="why-features">
+      <div class="why-card reveal"><div class="wc-icon"><i class="fas fa-shield-alt"></i></div><div class="wc-title">Legal Assurance</div><div class="wc-desc">Every property is legally verified with clear titles and RERA compliance before you sign.</div></div>
+      <div class="why-card reveal delay-1"><div class="wc-icon"><i class="fas fa-trophy"></i></div><div class="wc-title">3+ Years of Trust</div><div class="wc-desc">Proven track record with 43+ successful transactions and zero disputed deals.</div></div>
+      <div class="why-card reveal delay-2"><div class="wc-icon"><i class="fas fa-handshake"></i></div><div class="wc-title">Zero Hidden Costs</div><div class="wc-desc">Fully transparent fee structure. What you agree to is exactly what you pay.</div></div>
+      <div class="why-card reveal delay-3"><div class="wc-icon"><i class="fas fa-clock"></i></div><div class="wc-title">Fast Closures</div><div class="wc-desc">Our streamlined process delivers swift closures without sacrificing thoroughness.</div></div>
+      <div class="why-card reveal delay-4"><div class="wc-icon"><i class="fas fa-headset"></i></div><div class="wc-title">VIP Support</div><div class="wc-desc">Dedicated client managers available through every step of your real estate journey.</div></div>
+      <div class="why-card reveal delay-5"><div class="wc-icon"><i class="fas fa-university"></i></div><div class="wc-title">Home Loan Help</div><div class="wc-desc">Assistance securing the best home loan rates from leading banks and NBFCs.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTY SEARCH -->
+<section class="search-section" id="search">
+  <div class="search-box reveal">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:8px;"><span>Find Your Property</span></div>
+    <div class="search-title">Search Premium Properties</div>
+    <div class="search-sub">Filter by your preferences and discover verified listings</div>
+    <div class="search-filters">
+      <div class="filter-group">
+        <div class="filter-label">Location</div>
+        <select class="filter-select" id="fLocation">
+          <option value="">All Locations</option>
+          <option>Vaishali Nagar</option>
+          <option>Malviya Nagar</option>
+          <option>C-Scheme</option>
+          <option>Mansarovar</option>
+          <option>Jagatpura</option>
+          <option>Ajmer Road</option>
+          <option>Tonk Road</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">Property Type</div>
+        <select class="filter-select" id="fType">
+          <option value="">All Types</option>
+          <option>Apartment</option>
+          <option>Villa</option>
+          <option>Farmhouse</option>
+          <option>Commercial</option>
+          <option>Plot</option>
+          <option>Penthouse</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">Budget</div>
+        <select class="filter-select" id="fBudget">
+          <option value="">Any Budget</option>
+          <option>Under ₹50L</option>
+          <option>₹50L – ₹1Cr</option>
+          <option>₹1Cr – ₹2Cr</option>
+          <option>₹2Cr – ₹5Cr</option>
+          <option>Above ₹5Cr</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">Bedrooms</div>
+        <select class="filter-select" id="fBedrooms">
+          <option value="">Any BHK</option>
+          <option>1 BHK</option>
+          <option>2 BHK</option>
+          <option>3 BHK</option>
+          <option>4 BHK</option>
+          <option>5+ BHK</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">Status</div>
+        <select class="filter-select" id="fStatus">
+          <option value="">Any Status</option>
+          <option>For Sale</option>
+          <option>For Rent</option>
+          <option>Under Construction</option>
+          <option>Ready to Move</option>
+        </select>
+      </div>
+    </div>
+    <div class="search-btn-wrap">
+      <button class="btn-gold" id="searchBtn" onclick="searchProperties()"><i class="fas fa-search" style="margin-right:8px"></i>Search Properties</button>
+    </div>
+    <div id="propertyResults">
+      <div class="results-header">
+        <div class="results-count" id="resultsCount"></div>
+        <a href="#" onclick="closeResults();return false;" style="font-size:0.8rem;color:var(--white2);text-decoration:none;">Clear Results</a>
+      </div>
+      <div class="property-grid" id="propertyGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div style="text-align:center;margin-bottom:20px;">
+    <div class="section-eyebrow reveal" style="justify-content:center;"><span>Client Stories</span></div>
+    <h2 class="section-title reveal" style="text-align:center;">Voices of <em>Trust</em></h2>
+    <p class="section-desc reveal" style="text-align:center;margin:0 auto;">Real experiences from the families and investors who placed their trust in us.</p>
+  </div>
+  <div class="testi-slider">
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-card"><div class="testi-inner">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testi-text">Jitesh bhai handled our 3BHK purchase in Vaishali Nagar with such professionalism. The legal verification gave us complete peace of mind. Absolutely zero hidden charges!</div>
+        <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Rajesh Sharma</div><div class="testi-location">Vaishali Nagar, Jaipur</div></div></div>
+      </div></div>
+      <div class="testi-card"><div class="testi-inner">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testi-text">We sold our farmhouse through Jitesh Real E State Hub within three weeks at the price we wanted. Their network of genuine buyers is truly impressive.</div>
+        <div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Priya Agarwal</div><div class="testi-location">Ajmer Road, Jaipur</div></div></div>
+      </div></div>
+      <div class="testi-card"><div class="testi-inner">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testi-text">As an NRI investor, I was nervous about buying in Jaipur remotely. The team managed everything end-to-end with complete transparency. My investment has already appreciated 18%!</div>
+        <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Amit Gupta</div><div class="testi-location">Investor, Dubai</div></div></div>
+      </div></div>
+      <div class="testi-card"><div class="testi-inner">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testi-text">The legal documentation support for our commercial property in C-Scheme was handled perfectly. Everything was registered on time without any hassle.</div>
+        <div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Sunita Mehta</div><div class="testi-location">C-Scheme, Jaipur</div></div></div>
+      </div></div>
+      <div class="testi-card"><div class="testi-inner">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testi-text">They helped us get a home loan at the best rate and guided us throughout. The team was always available for our questions. Highly recommend for first-time buyers!</div>
+        <div class="testi-author"><div class="testi-avatar">V</div><div><div class="testi-name">Vikram & Neha Joshi</div><div class="testi-location">Mansarovar, Jaipur</div></div></div>
+      </div></div>
+      <div class="testi-card"><div class="testi-inner">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="testi-text">Jitesh Sir's knowledge of the Malviya Nagar market is extraordinary. He found us a perfect plot that others said wasn't available. True professionals in every sense.</div>
+        <div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Mohan Lal Bansal</div><div class="testi-location">Malviya Nagar, Jaipur</div></div></div>
+      </div></div>
+    </div>
+  </div>
+  <div class="testi-controls">
+    <button class="tc-btn" onclick="prevTesti()"><i class="fas fa-chevron-left"></i></button>
+    <button class="tc-btn" onclick="nextTesti()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="section-eyebrow reveal" style="justify-content:center;"><span>Get In Touch</span></div>
+    <h2 class="section-title reveal" style="text-align:center;">Begin Your <em>Premium</em> Journey</h2>
+    <p class="section-desc reveal" style="margin:0 auto;text-align:center;">Reach out for a complimentary consultation. Our experts are ready to help you buy, sell, or invest wisely.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal-left">
+      <div class="contact-info-item"><div class="ci-icon"><i class="fas fa-phone"></i></div><div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+919667300381">+91 96673 00381</a></div></div></div>
+      <div class="contact-info-item"><div class="ci-icon"><i class="fas fa-envelope"></i></div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:sahujits999@gmail.com">sahujits999@gmail.com</a></div></div></div>
+      <div class="contact-info-item"><div class="ci-icon"><i class="fab fa-whatsapp"></i></div><div><div class="ci-label">WhatsApp</div><div class="ci-value"><a href="https://wa.me/919667300381" target="_blank">Chat on WhatsApp</a></div></div></div>
+      <div class="contact-info-item"><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="ci-label">Office</div><div class="ci-value">Jitesh Real E State Hub<br>Jaipur, Rajasthan, India</div></div></div>
+      <div class="contact-info-item"><div class="ci-icon"><i class="fas fa-clock"></i></div><div><div class="ci-label">Working Hours</div><div class="ci-value">Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: By Appointment</div></div></div>
+    </div>
+    <div class="contact-form reveal-right">
+      <div class="form-row">
+        <div class="form-group"><div class="form-label">Full Name</div><input class="form-input" type="text" id="cName" placeholder="Your full name"></div>
+        <div class="form-group"><div class="form-label">Phone Number</div><input class="form-input" type="tel" id="cPhone" placeholder="+91 00000 00000"></div>
+      </div>
+      <div class="form-group"><div class="form-label">Email Address</div><input class="form-input" type="email" id="cEmail" placeholder="your@email.com"></div>
+      <div class="form-group"><div class="form-label">Property Interest</div>
+        <select class="form-select" id="cInterest">
+          <option>Buy Property</option>
+          <option>Sell Property</option>
+          <option>Rent Property</option>
+          <option>Commercial Property</option>
+          <option>Property Investment</option>
+          <option>Legal Documentation</option>
+          <option>Home Loan Assistance</option>
+        </select>
+      </div>
+      <div class="form-group"><div class="form-label">Message</div><textarea class="form-textarea" id="cMsg" placeholder="Tell us about your requirements, budget, preferred location..."></textarea></div>
+      <button class="btn-gold" style="width:100%;padding:14px;font-size:0.85rem;" onclick="submitContact()"><i class="fas fa-paper-plane" style="margin-right:8px"></i>Send Message</button>
+      <div class="form-success" id="formSuccess"><i class="fas fa-check-circle"></i> Thank you! We'll contact you within 24 hours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-section">
+  <div class="map-overlay"></div>
+  <div class="map-content">
+    <div class="map-pin"><i class="fas fa-map-marker-alt"></i></div>
+    <div class="map-address">Jitesh Real E State Hub</div>
+    <div class="map-city">Jaipur · Rajasthan · India</div>
+    <div style="margin-top:16px;"><a href="https://maps.google.com/?q=Jaipur,Rajasthan" target="_blank" class="btn-outline-gold" style="font-size:0.78rem;padding:8px 20px;">View on Google Maps</a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo footer-nav-logo" href="#home">
+        <div class="nav-logo-icon"><i class="fas fa-gem"></i></div>
+        <div class="nav-logo-text">Jitesh Real E State Hub<span>Luxury Real Estate</span></div>
+      </a>
+      <p class="footer-tagline">Jaipur's most trusted luxury real estate partner. Delivering premium properties with complete legal assurance and zero hidden charges since 2022.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/919667300381" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#search">Search Properties</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Buy Property</a></li>
+        <li><a href="#services">Sell Property</a></li>
+        <li><a href="#services">Rent Property</a></li>
+        <li><a href="#services">Commercial Property</a></li>
+        <li><a href="#services">Property Investment</a></li>
+        <li><a href="#services">Legal Documentation</a></li>
+        <li><a href="#services">Home Loan Assistance</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+919667300381">+91 96673 00381</a></span></div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:sahujits999@gmail.com">sahujits999@gmail.com</a></span></div>
+      <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span><a href="https://wa.me/919667300381">WhatsApp Chat</a></span></div>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Jaipur, Rajasthan, India</span></div>
+      <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9AM – 7PM</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 <span class="gold">Jitesh Real E State Hub</span>. All rights reserved.</span>
+    <span>Designed with <span class="gold">♥</span> for Premium Real Estate</span>
+  </div>
+</footer>
+
+</main>
+
+<!-- DASHBOARD / UPLOAD PAGES (hidden initially) -->
+<div id="dashboardPage" class="page-section" style="background:var(--black2);display:none;">
+  <div class="dashboard-header">
+    <div class="section-eyebrow"><span>My Account</span></div>
+    <h2 class="section-title" id="dashTitle">Welcome Back!</h2>
+  </div>
+  <div class="dash-stats">
+    <div class="dash-stat"><div class="ds-num" id="ds1">0</div><div class="ds-label">My Listings</div></div>
+    <div class="dash-stat"><div class="ds-num">0</div><div class="ds-label">Pending Approval</div></div>
+    <div class="dash-stat"><div class="ds-num">0</div><div class="ds-label">Approved</div></div>
+    <div class="dash-stat"><div class="ds-num">0</div><div class="ds-label">Total Views</div></div>
+  </div>
+  <div style="margin-bottom:24px;display:flex;gap:12px;flex-wrap:wrap;">
+    <button class="btn-gold" onclick="showPage('upload')"><i class="fas fa-plus" style="margin-right:8px"></i>Upload New Property</button>
+    <button class="btn-outline-gold" onclick="showPage('main')"><i class="fas fa-arrow-left" style="margin-right:8px"></i>Back to Home</button>
+  </div>
+  <div style="background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:12px;padding:40px;text-align:center;">
+    <i class="fas fa-folder-open" style="font-size:3rem;color:rgba(201,161,74,0.2);margin-bottom:16px;display:block;"></i>
+    <p style="color:var(--white2);font-size:0.9rem;">No property listings yet. Upload your first property to get started.</p>
+    <div style="margin-top:20px;"><button class="btn-gold" onclick="showPage('upload')">Upload Property</button></div>
+  </div>
+</div>
+
+<div id="uploadPage" class="page-section" style="background:var(--black2);display:none;">
+  <div class="section-eyebrow"><span>Upload Property</span></div>
+  <h2 class="section-title">List Your <em>Property</em></h2>
+  <p style="color:var(--white2);font-size:0.85rem;margin-bottom:32px;">Your listing will be reviewed by our admin team before going live. This ensures only genuine, verified properties are published.</p>
+  <div class="upload-form">
+    <div class="form-row">
+      <div class="form-group"><div class="form-label">Property Title</div><input class="form-input" type="text" placeholder="e.g. Luxurious 4BHK Villa in Vaishali Nagar"></div>
+      <div class="form-group"><div class="form-label">Property Type</div>
+        <select class="form-select"><option>Apartment</option><option>Villa</option><option>Farmhouse</option><option>Commercial</option><option>Plot</option><option>Penthouse</option></select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><div class="form-label">Price (₹)</div><input class="form-input" type="text" placeholder="e.g. 1,25,00,000"></div>
+      <div class="form-group"><div class="form-label">Area (sq.ft)</div><input class="form-input" type="text" placeholder="e.g. 2400"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><div class="form-label">Location</div>
+        <select class="form-select"><option>Vaishali Nagar</option><option>Malviya Nagar</option><option>C-Scheme</option><option>Mansarovar</option><option>Jagatpura</option><option>Ajmer Road</option><option>Tonk Road</option></select>
+      </div>
+      <div class="form-group"><div class="form-label">Bedrooms</div>
+        <select class="form-select"><option>1 BHK</option><option>2 BHK</option><option>3 BHK</option><option>4 BHK</option><option>5+ BHK</option><option>N/A (Commercial/Plot)</option></select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><div class="form-label">Status</div>
+        <select class="form-select"><option>For Sale</option><option>For Rent</option><option>Under Construction</option><option>Ready to Move</option></select>
+      </div>
+      <div class="form-group"><div class="form-label">Contact Number</div><input class="form-input" type="tel" placeholder="+91 00000 00000"></div>
+    </div>
+    <div class="form-group"><div class="form-label">Description</div><textarea class="form-textarea" style="min-height:120px;" placeholder="Describe the property in detail..."></textarea></div>
+    <div class="upload-image-zone" onclick="showNotif('Image upload feature available in full version')">
+      <i class="fas fa-images"></i>
+      <p>Click to upload property images (multiple)</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:6px;">JPG, PNG up to 10MB each</p>
+    </div>
+    <div class="upload-image-zone" onclick="showNotif('Video upload feature available in full version')" style="margin-bottom:24px;">
+      <i class="fas fa-video"></i>
+      <p>Click to upload property video</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:6px;">MP4 up to 100MB</p>
+    </div>
+    <div style="background:rgba(201,161,74,0.06);border:1px solid rgba(201,161,74,0.2);border-radius:6px;padding:16px;margin-bottom:20px;font-size:0.82rem;color:var(--white2);">
+      <i class="fas fa-info-circle" style="color:var(--gold);margin-right:8px"></i>Your listing will be marked <strong style="color:orange">Pending Approval</strong>. Our team reviews within 24 hours.
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button class="btn-gold" onclick="submitUpload()"><i class="fas fa-upload" style="margin-right:8px"></i>Submit for Approval</button>
+      <button class="btn-outline-gold" onclick="showPage('dashboard')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="adminPage" class="page-section" style="background:var(--black2);display:none;">
+  <div class="section-eyebrow"><span>Admin Panel</span></div>
+  <h2 class="section-title">Admin <em>Dashboard</em></h2>
+  <div class="dash-stats" style="margin-bottom:32px;">
+    <div class="dash-stat"><div class="ds-num">0</div><div class="ds-label">Total Users</div></div>
+    <div class="dash-stat"><div class="ds-num">0</div><div class="ds-label">Pending Listings</div></div>
+    <div class="dash-stat"><div class="ds-num">0</div><div class="ds-label">Approved Listings</div></div>
+    <div class="dash-stat"><div class="ds-num">0</div><div class="ds-label">Messages</div></div>
+  </div>
+  <div class="admin-tabs">
+    <button class="admin-tab active" onclick="adminTab(this,'tabUsers')">Users</button>
+    <button class="admin-tab" onclick="adminTab(this,'tabListings')">Listings</button>
+    <button class="admin-tab" onclick="adminTab(this,'tabMessages')">Messages</button>
+    <button class="admin-tab" onclick="adminTab(this,'tabTestimonials')">Testimonials</button>
+  </div>
+  <div id="tabUsers" class="admin-tab-content">
+    <div style="background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:8px;overflow:hidden;">
+      <table class="admin-table">
+        <thead><tr><th>Name</th><th>Email</th><th>Joined</th><th>Listings</th><th>Actions</th></tr></thead>
+        <tbody id="userTableBody"><tr><td colspan="5" style="text-align:center;padding:30px;color:var(--white2);">No users yet.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+  <div id="tabListings" class="admin-tab-content" style="display:none">
+    <div style="background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:8px;overflow:hidden;">
+      <table class="admin-table">
+        <thead><tr><th>Title</th><th>Type</th><th>Location</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody id="listingTableBody"><tr><td colspan="6" style="text-align:center;padding:30px;color:var(--white2);">No listings to review.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+  <div id="tabMessages" class="admin-tab-content" style="display:none">
+    <div style="background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:8px;overflow:hidden;">
+      <table class="admin-table">
+        <thead><tr><th>Name</th><th>Email</th><th>Interest</th><th>Message</th><th>Date</th></tr></thead>
+        <tbody id="msgTableBody"><tr><td colspan="5" style="text-align:center;padding:30px;color:var(--white2);">No messages yet.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+  <div id="tabTestimonials" class="admin-tab-content" style="display:none">
+    <div style="background:var(--glass);border:1px solid rgba(201,161,74,0.15);border-radius:8px;padding:30px;text-align:center;color:var(--white2);font-size:0.9rem;">Testimonial management panel — approve or feature client reviews here.</div>
+  </div>
+  <div style="margin-top:24px;"><button class="btn-outline-gold" onclick="showPage('main')"><i class="fas fa-arrow-left" style="margin-right:8px"></i>Back to Home</button></div>
+</div>
+
+<!-- MODALS -->
+<!-- LOGIN -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')"><i class="fas fa-times"></i></button>
+    <div class="modal-logo"><i class="fas fa-gem"></i></div>
+    <div class="modal-title">Welcome Back</div>
+    <div class="modal-sub">Sign in to your account</div>
+    <div class="form-group"><div class="form-label">Email</div><input class="form-input" type="email" id="loginEmail" placeholder="your@email.com"></div>
+    <div class="form-group"><div class="form-label">Password</div><input class="form-input" type="password" id="loginPwd" placeholder="Your password"></div>
+    <div class="modal-forgot" onclick="showNotif('Password reset email sent (feature in full version)')">Forgot Password?</div>
+    <button class="btn-gold" style="width:100%;padding:13px;margin-bottom:4px;" onclick="doLogin()">Sign In</button>
+    <div class="modal-switch">Don't have an account? <a onclick="switchModal('loginModal','registerModal')">Register Now</a></div>
+    <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:16px;padding-top:12px;text-align:center;">
+      <a onclick="doAdminLogin()" style="font-size:0.78rem;color:rgba(201,161,74,0.6);cursor:pointer;">Admin Login →</a>
+    </div>
+  </div>
+</div>
+<!-- REGISTER -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('registerModal')"><i class="fas fa-times"></i></button>
+    <div class="modal-logo"><i class="fas fa-gem"></i></div>
+    <div class="modal-title">Create Account</div>
+    <div class="modal-sub">Join Jitesh Real E State Hub</div>
+    <div class="form-row"><div class="form-group"><div class="form-label">First Name</div><input class="form-input" type="text" id="regFName" placeholder="First name"></div><div class="form-group"><div class="form-label">Last Name</div><input class="form-input" type="text" id="regLName" placeholder="Last name"></div></div>
+    <div class="form-group"><div class="form-label">Email</div><input class="form-input" type="email" id="regEmail" placeholder="your@email.com"></div>
+    <div class="form-group"><div class="form-label">Phone</div><input class="form-input" type="tel" id="regPhone" placeholder="+91 00000 00000"></div>
+    <div class="form-group"><div class="form-label">Password</div><input class="form-input" type="password" id="regPwd" placeholder="Create a password"></div>
+    <button class="btn-gold" style="width:100%;padding:13px;margin-bottom:4px;" onclick="doRegister()">Create Account</button>
+    <div class="modal-switch">Already have an account? <a onclick="switchModal('registerModal','loginModal')">Login</a></div>
+  </div>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/919667300381" target="_blank" class="float-whatsapp" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+919667300381" class="float-call" title="Call Now"><i class="fas fa-phone"></i></a>
+<div class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top"><i class="fas fa-chevron-up"></i></div>
+
+<!-- NOTIFICATION -->
+<div class="notif" id="notif"></div>
+
+<script>
+// ===== STORAGE =====
+const store={
+  users: JSON.parse(localStorage.getItem('jreh_users')||'[]'),
+  currentUser: JSON.parse(localStorage.getItem('jreh_cu')||'null'),
+  listings: JSON.parse(localStorage.getItem('jreh_listings')||'[]'),
+  messages: JSON.parse(localStorage.getItem('jreh_messages')||'[]'),
+  save(){localStorage.setItem('jreh_users',JSON.stringify(this.users));localStorage.setItem('jreh_cu',JSON.stringify(this.currentUser));localStorage.setItem('jreh_listings',JSON.stringify(this.listings));localStorage.setItem('jreh_messages',JSON.stringify(this.messages));}
+};
+const ADMIN={email:'admin@jreh.in',pwd:'admin@2024',name:'Admin'};
+
+// ===== LOADER =====
+window.addEventListener('load',()=>{
+  // Particles
+  const pc=document.getElementById('particles');
+  for(let i=0;i<60;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.cssText=`left:${Math.random()*100}%;width:${Math.random()*3+1}px;height:${Math.random()*3+1}px;animation-delay:${Math.random()*4}s;animation-duration:${Math.random()*6+4}s;`;
+    pc.appendChild(p);
+  }
+  setTimeout(()=>{
+    document.getElementById('loader').classList.add('hide');
+    setTimeout(()=>document.getElementById('loader').remove(),900);
+  },3000);
+  initUI();
+});
+
+function initUI(){
+  buildHeroDots();buildServicesDots();
+  heroAutoSlide();servicesAutoSlide();testiAutoSlide();
+  initCounters();initScrollReveal();
+  updateAuthUI();
+}
+
+// ===== HERO =====
+let heroIdx=0,heroTimer;
+const heroSlides=document.querySelectorAll('.hero-slide');
+function buildHeroDots(){
+  const c=document.getElementById('heroDots');
+  heroSlides.forEach((_,i)=>{const d=document.createElement('div');d.className='hero-dot'+(i===0?' active':'');d.onclick=()=>goHero(i);c.appendChild(d);});
+}
+function goHero(i){heroIdx=i;heroSlides.forEach((s,j)=>{s.classList.toggle('active',j===i);});document.querySelectorAll('.hero-dot').forEach((d,j)=>d.classList.toggle('active',j===i));}
+function heroAutoSlide(){heroTimer=setInterval(()=>goHero((heroIdx+1)%heroSlides.length),5000);}
+
+// ===== SERVICES =====
+let svcIdx=0,svcTimer;const SVCTOTAL=8;
+function buildServicesDots(){const c=document.getElementById('servicesDots');for(let i=0;i<SVCTOTAL;i++){const d=document.createElement('div');d.className='s-dot'+(i===0?' active':'');d.onclick=()=>goService(i);c.appendChild(d);}}
+function goService(i){svcIdx=i;document.getElementById('servicesTrack').style.transform=`translateX(-${i*100}%)`;document.querySelectorAll('.s-dot').forEach((d,j)=>d.classList.toggle('active',j===i));}
+function prevService(){goService((svcIdx-1+SVCTOTAL)%SVCTOTAL);}
+function nextService(){goService((svcIdx+1)%SVCTOTAL);}
+function servicesAutoSlide(){svcTimer=setInterval(()=>nextService(),5500);}
+// Swipe
+let tsX=0;
+document.getElementById('servicesSlider')?.addEventListener('touchstart',e=>tsX=e.touches[0].clientX,{passive:true});
+document.getElementById('servicesSlider')?.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tsX;if(Math.abs(dx)>40){dx<0?nextService():prevService();}});
+
+// ===== TESTIMONIALS =====
+let testiIdx=0,testiTimer;
+function prevTesti(){const cards=document.querySelectorAll('.testi-card');const visible=window.innerWidth<768?1:3;const max=cards.length-visible;testiIdx=Math.max(0,testiIdx-1);document.getElementById('testiTrack').style.transform=`translateX(-${testiIdx*(100/visible)}%)`;}
+function nextTesti(){const cards=document.querySelectorAll('.testi-card');const visible=window.innerWidth<768?1:3;const max=cards.length-visible;testiIdx=Math.min(max,testiIdx+1);document.getElementById('testiTrack').style.transform=`translateX(-${testiIdx*(100/visible)}%)`;}
+function testiAutoSlide(){testiTimer=setInterval(()=>{const cards=document.querySelectorAll('.testi-card');const visible=window.innerWidth<768?1:3;if(testiIdx>=cards.length-visible)testiIdx=-1;nextTesti();},4500);}
+
+// ===== COUNTERS =====
+function initCounters(){
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCounter(e.target);obs.unobserve(e.target);}});},{threshold:0.3});
+  document.querySelectorAll('.ach-num[data-target]').forEach(el=>obs.observe(el));
+}
+function animateCounter(el){const target=+el.dataset.target;const dur=2000;const step=target/dur*16;let cur=0;const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=Math.floor(cur)+(target===100?'%':target===3?'+':'+');if(cur>=target)clearInterval(t);},16);}
+
+// ===== SCROLL REVEAL =====
+function initScrollReveal(){
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
+}
+
+// ===== NAVBAR =====
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',scrollY>80);
+  document.getElementById('backTop').classList.toggle('visible',scrollY>400);
+});
+function toggleMobileNav(){document.getElementById('navLinks').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('navLinks').classList.remove('open');}
+
+// ===== MODALS =====
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+function switchModal(from,to){closeModal(from);openModal(to);}
+document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open');}));
+
+// ===== AUTH =====
+function doLogin(){
+  const em=document.getElementById('loginEmail').value.trim();
+  const pw=document.getElementById('loginPwd').value;
+  if(!em||!pw){showNotif('Please fill all fields');return;}
+  if(em===ADMIN.email&&pw===ADMIN.pwd){store.currentUser={name:ADMIN.name,email:em,isAdmin:true};store.save();closeModal('loginModal');updateAuthUI();showNotif('Welcome, Admin!');return;}
+  const u=store.users.find(u=>u.email===em&&u.pwd===pw);
+  if(!u){showNotif('Invalid email or password');return;}
+  store.currentUser=u;store.save();closeModal('loginModal');updateAuthUI();showNotif(`Welcome back, ${u.name}!`);
+}
+function doAdminLogin(){
+  document.getElementById('loginEmail').value=ADMIN.email;
+  document.getElementById('loginPwd').value=ADMIN.pwd;
+  showNotif('Admin credentials pre-filled. Click Sign In.');
+}
+function doRegister(){
+  const fn=document.getElementById('regFName').value.trim();
+  const ln=document.getElementById('regLName').value.trim();
+  const em=document.getElementById('regEmail').value.trim();
+  const ph=document.getElementById('regPhone').value.trim();
+  const pw=document.getElementById('regPwd').value;
+  if(!fn||!em||!pw){showNotif('Please fill all required fields');return;}
+  if(store.users.find(u=>u.email===em)){showNotif('Email already registered');return;}
+  const u={name:fn+' '+ln,email:em,phone:ph,pwd:pw,joined:new Date().toLocaleDateString(),isAdmin:false};
+  store.users.push(u);store.currentUser=u;store.save();
+  closeModal('registerModal');updateAuthUI();showNotif(`Account created! Welcome, ${fn}!`);
+}
+function logout(){store.currentUser=null;store.save();updateAuthUI();showPage('main');showNotif('Logged out successfully');}
+function updateAuthUI(){
+  const cu=store.currentUser;
+  document.getElementById('loginNavBtn').style.display=cu?'none':'inline-block';
+  document.getElementById('registerNavBtn').style.display=cu?'none':'inline-block';
+  const av=document.getElementById('navAvatar');
+  av.style.display=cu?'flex':'none';
+  if(cu)av.textContent=cu.name.charAt(0).toUpperCase();
+}
+function toggleUserMenu(){document.getElementById('userMenu').classList.toggle('open');}
+function closeUserMenu(){document.getElementById('userMenu').classList.remove('open');}
+document.addEventListener('click',e=>{if(!e.target.closest('#navUserWrap'))closeUserMenu();});
+
+// ===== PAGE NAVIGATION =====
+function showPage(page){
+  const main=document.getElementById('mainContent');
+  const dash=document.getElementById('dashboardPage');
+  const up=document.getElementById('uploadPage');
+  const adm=document.getElementById('adminPage');
+  [main,dash,up,adm].forEach(el=>el.style.display='none');
+  if(page==='main'){main.style.display='block';window.scrollTo({top:0});}
+  else if(page==='dashboard'){
+    if(!store.currentUser){openModal('loginModal');main.style.display='block';return;}
+    dash.style.display='block';
+    document.getElementById('dashTitle').textContent=`Welcome, ${store.currentUser.name}!`;
+    const myL=store.listings.filter(l=>l.owner===store.currentUser.email).length;
+    document.getElementById('ds1').textContent=myL;
+    window.scrollTo({top:0});
+  }
+  else if(page==='upload'){
+    if(!store.currentUser){openModal('loginModal');main.style.display='block';return;}
+    up.style.display='block';window.scrollTo({top:0});
+  }
+  else if(page==='admin'){
+    if(!store.currentUser?.isAdmin){showNotif('Admin access only');main.style.display='block';return;}
+    adm.style.display='block';loadAdminData();window.scrollTo({top:0});
+  }
+}
+
+// ===== PROPERTY SEARCH =====
+const DEMO_PROPERTIES=[
+  {title:'3 BHK Luxury Apartment',type:'Apartment',location:'Vaishali Nagar',price:'₹85 Lakh',bedrooms:'3 BHK',status:'For Sale',area:'1800 sq.ft'},
+  {title:'Premium 4 BHK Villa',type:'Villa',location:'Malviya Nagar',price:'₹2.4 Cr',bedrooms:'4 BHK',status:'Ready to Move',area:'3200 sq.ft'},
+  {title:'Modern 2 BHK Flat',type:'Apartment',location:'Mansarovar',price:'₹48 Lakh',bedrooms:'2 BHK',status:'Under Construction',area:'1050 sq.ft'},
+  {title:'Commercial Office Space',type:'Commercial',location:'C-Scheme',price:'₹1.8 Cr',bedrooms:'N/A',status:'For Sale',area:'2500 sq.ft'},
+  {title:'Luxury Farmhouse Estate',type:'Farmhouse',location:'Ajmer Road',price:'₹4.5 Cr',bedrooms:'5+ BHK',status:'For Sale',area:'12000 sq.ft'},
+  {title:'Premium 3 BHK Penthouse',type:'Penthouse',location:'Tonk Road',price:'₹1.2 Cr',bedrooms:'3 BHK',status:'For Sale',area:'2200 sq.ft'},
+  {title:'Residential Plot 200 Sq.Yd',type:'Plot',location:'Jagatpura',price:'₹32 Lakh',bedrooms:'N/A',status:'For Sale',area:'1800 sq.ft'},
+  {title:'2 BHK Furnished Apartment',type:'Apartment',location:'Vaishali Nagar',price:'₹22K/mo',bedrooms:'2 BHK',status:'For Rent',area:'1100 sq.ft'},
+];
+
+function searchProperties(){
+  const loc=document.getElementById('fLocation').value;
+  const type=document.getElementById('fType').value;
+  const budget=document.getElementById('fBudget').value;
+  const bed=document.getElementById('fBedrooms').value;
+  const status=document.getElementById('fStatus').value;
+  
+  let results=[...DEMO_PROPERTIES,...store.listings.filter(l=>l.approved)];
+  if(loc)results=results.filter(p=>p.location===loc);
+  if(type)results=results.filter(p=>p.type===type);
+  if(bed)results=results.filter(p=>p.bedrooms===bed);
+  if(status)results=results.filter(p=>p.status===status);
+  
+  const grid=document.getElementById('propertyGrid');
+  const res=document.getElementById('propertyResults');
+  const cnt=document.getElementById('resultsCount');
+  res.style.display='block';
+  cnt.innerHTML=`Showing <strong>${results.length}</strong> properties`;
+  
+  if(results.length===0){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--white2)"><i class="fas fa-search" style="font-size:2rem;color:rgba(201,161,74,0.2);display:block;margin-bottom:12px"></i>No properties match your filters. Try adjusting your search.</div>';return;}
+  
+  grid.innerHTML=results.map(p=>`
+  <div class="prop-card">
+    <div class="prop-img" style="background:linear-gradient(135deg,#1a${Math.floor(Math.random()*30+10).toString(16)}${Math.floor(Math.random()*30+10).toString(16)},#${Math.floor(Math.random()*30+10).toString(16)}1a${Math.floor(Math.random()*30+20).toString(16)})">
+      <i class="fas fa-building"></i>
+      <div class="prop-badge">${p.status||'For Sale'}</div>
+    </div>
+    <div class="prop-body">
+      <div class="prop-price">${p.price}</div>
+      <div class="prop-title">${p.title}</div>
+      <div class="prop-meta">
+        <span><i class="fas fa-map-marker-alt"></i>${p.location}</span>
+        ${p.bedrooms&&p.bedrooms!=='N/A'?`<span><i class="fas fa-bed"></i>${p.bedrooms}</span>`:''}
+        ${p.area?`<span><i class="fas fa-expand"></i>${p.area}</span>`:''}
+      </div>
+    </div>
+  </div>`).join('');
+}
+function closeResults(){document.getElementById('propertyResults').style.display='none';}
+
+// ===== CONTACT FORM =====
+function submitContact(){
+  const n=document.getElementById('cName').value.trim();
+  const p=document.getElementById('cPhone').value.trim();
+  const e=document.getElementById('cEmail').value.trim();
+  const i=document.getElementById('cInterest').value;
+  const m=document.getElementById('cMsg').value.trim();
+  if(!n||!p){showNotif('Please fill name and phone');return;}
+  const msg={name:n,phone:p,email:e,interest:i,message:m,date:new Date().toLocaleDateString()};
+  store.messages.push(msg);store.save();
+  document.getElementById('formSuccess').style.display='block';
+  ['cName','cPhone','cEmail','cMsg'].forEach(id=>document.getElementById(id).value='');
+  showNotif('Message sent! We\'ll call you soon.');
+}
+
+// ===== UPLOAD =====
+function submitUpload(){
+  if(!store.currentUser){openModal('loginModal');return;}
+  showNotif('Property submitted for admin approval! ✓');
+  showPage('dashboard');
+}
+
+// ===== ADMIN =====
+function adminTab(btn,tabId){
+  document.querySelectorAll('.admin-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.admin-tab-content').forEach(c=>c.style.display='none');
+  btn.classList.add('active');document.getElementById(tabId).style.display='block';
+}
+function loadAdminData(){
+  // Users table
+  const utb=document.getElementById('userTableBody');
+  utb.innerHTML=store.users.length?store.users.map(u=>`<tr><td>${u.name}</td><td>${u.email}</td><td>${u.joined||'—'}</td><td>0</td><td><button class="btn-del" onclick="showNotif('User management in full version')">Manage</button></td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--white2)">No users yet.</td></tr>';
+  // Listings
+  const ltb=document.getElementById('listingTableBody');
+  ltb.innerHTML=store.listings.length?store.listings.map((l,i)=>`<tr><td>${l.title||'Untitled'}</td><td>${l.type||'—'}</td><td>${l.location||'—'}</td><td>${l.price||'—'}</td><td><span class="${l.approved?'approved-badge':'pending-badge'}">${l.approved?'Approved':'Pending'}</span></td><td style="display:flex;gap:6px"><button class="btn-approve" onclick="approveL(${i})">Approve</button><button class="btn-reject" onclick="rejectL(${i})">Reject</button></td></tr>`).join(''):'<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--white2)">No listings to review.</td></tr>';
+  // Messages
+  const mtb=document.getElementById('msgTableBody');
+  mtb.innerHTML=store.messages.length?store.messages.map(m=>`<tr><td>${m.name}</td><td>${m.email}</td><td>${m.interest}</td><td style="max-width:200px">${m.message.substring(0,80)}${m.message.length>80?'...':''}</td><td>${m.date}</td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--white2)">No messages yet.</td></tr>';
+}
+function approveL(i){store.listings[i].approved=true;store.save();loadAdminData();showNotif('Listing approved!');}
+function rejectL(i){store.listings.splice(i,1);store.save();loadAdminData();showNotif('Listing rejected and removed.');}
+
+// ===== NOTIFICATION =====
+let notifTimer;
+function showNotif(msg){
+  const n=document.getElementById('notif');
+  n.innerHTML=`<i class="fas fa-gem"></i>${msg}`;
+  n.classList.add('show');
+  clearTimeout(notifTimer);
+  notifTimer=setTimeout(()=>n.classList.remove('show'),3500);
+}
+
+// ===== KEYBOARD =====
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));}});
+</script>
+</body>
+</html>
